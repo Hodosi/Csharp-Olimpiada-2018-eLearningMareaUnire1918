@@ -1,0 +1,9 @@
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.csprojAssemblyReference.cache
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.eLearning1918_start.resources
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.Properties.Resources.resources
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.csproj.GenerateResource.cache
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\bin\Debug\eLearningMareaUnire1918.exe
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\bin\Debug\eLearningMareaUnire1918.pdb
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.exe
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.pdb
+D:\Desktop\2018 Judeteana\eLearningMareaUnire1918\eLearningMareaUnire1918\obj\Debug\eLearningMareaUnire1918.eLearning1918_Elev.resources
