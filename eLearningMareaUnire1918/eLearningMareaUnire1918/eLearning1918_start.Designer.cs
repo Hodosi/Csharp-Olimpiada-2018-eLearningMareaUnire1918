@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox_slideshow = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button_Inapoi = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button_Auto_Manual = new System.Windows.Forms.Button();
-            this.button_Inainte = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.pictureBox_login = new System.Windows.Forms.PictureBox();
+            this.button_Login = new System.Windows.Forms.Button();
             this.textBox_parola = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button_Login = new System.Windows.Forms.Button();
-            this.pictureBox_login = new System.Windows.Forms.PictureBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button_Inainte = new System.Windows.Forms.Button();
+            this.button_Auto_Manual = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button_Inapoi = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox_slideshow = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_slideshow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_slideshow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,115 +76,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1141, 526);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // pictureBox_login
             // 
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1117, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Platforma eLearning dedicata Marii Uniri de la 1918";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox_login.Location = new System.Drawing.Point(852, 355);
+            this.pictureBox_login.Name = "pictureBox_login";
+            this.pictureBox_login.Size = new System.Drawing.Size(277, 153);
+            this.pictureBox_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_login.TabIndex = 15;
+            this.pictureBox_login.TabStop = false;
             // 
-            // textBox1
+            // button_Login
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 151);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 357);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Aceasta platforma eLearnig este dedicata Marii Uniri de la 1918.  La 1 decembrie " +
-    "2018 se implinesc 100 de ani de la Unirea Transilvaniei, Banatului, Crisanei si " +
-    "Maramuresului cu Romania";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(17, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 49);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Despre Aplicatie:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox_slideshow
-            // 
-            this.pictureBox_slideshow.Location = new System.Drawing.Point(373, 146);
-            this.pictureBox_slideshow.Name = "pictureBox_slideshow";
-            this.pictureBox_slideshow.Size = new System.Drawing.Size(406, 287);
-            this.pictureBox_slideshow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_slideshow.TabIndex = 3;
-            this.pictureBox_slideshow.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(373, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(406, 44);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Slide Show";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button_Inapoi
-            // 
-            this.button_Inapoi.Location = new System.Drawing.Point(373, 468);
-            this.button_Inapoi.Name = "button_Inapoi";
-            this.button_Inapoi.Size = new System.Drawing.Size(128, 40);
-            this.button_Inapoi.TabIndex = 5;
-            this.button_Inapoi.Text = "Inapoi";
-            this.button_Inapoi.UseVisualStyleBackColor = true;
-            this.button_Inapoi.Click += new System.EventHandler(this.button_Inapoi_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(373, 439);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(406, 23);
-            this.progressBar1.TabIndex = 6;
-            // 
-            // button_Auto_Manual
-            // 
-            this.button_Auto_Manual.Location = new System.Drawing.Point(507, 468);
-            this.button_Auto_Manual.Name = "button_Auto_Manual";
-            this.button_Auto_Manual.Size = new System.Drawing.Size(138, 40);
-            this.button_Auto_Manual.TabIndex = 7;
-            this.button_Auto_Manual.Text = "Auto";
-            this.button_Auto_Manual.UseVisualStyleBackColor = true;
-            this.button_Auto_Manual.Click += new System.EventHandler(this.button_Auto_Manual_Click);
-            // 
-            // button_Inainte
-            // 
-            this.button_Inainte.Location = new System.Drawing.Point(651, 468);
-            this.button_Inainte.Name = "button_Inainte";
-            this.button_Inainte.Size = new System.Drawing.Size(128, 40);
-            this.button_Inainte.TabIndex = 8;
-            this.button_Inainte.Text = "Inainte";
-            this.button_Inainte.UseVisualStyleBackColor = true;
-            this.button_Inainte.Click += new System.EventHandler(this.button_Inainte_Click);
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(847, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(282, 44);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Intra in aplicatie:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(847, 185);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 29);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Email:";
-            // 
-            // textBox_email
-            // 
-            this.textBox_email.Location = new System.Drawing.Point(933, 180);
-            this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(196, 34);
-            this.textBox_email.TabIndex = 11;
+            this.button_Login.Location = new System.Drawing.Point(852, 290);
+            this.button_Login.Name = "button_Login";
+            this.button_Login.Size = new System.Drawing.Size(277, 39);
+            this.button_Login.TabIndex = 14;
+            this.button_Login.Text = "Login";
+            this.button_Login.UseVisualStyleBackColor = true;
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
             // textBox_parola
             // 
@@ -203,24 +114,114 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Parola:";
             // 
-            // button_Login
+            // textBox_email
             // 
-            this.button_Login.Location = new System.Drawing.Point(852, 290);
-            this.button_Login.Name = "button_Login";
-            this.button_Login.Size = new System.Drawing.Size(277, 39);
-            this.button_Login.TabIndex = 14;
-            this.button_Login.Text = "Login";
-            this.button_Login.UseVisualStyleBackColor = true;
-            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
+            this.textBox_email.Location = new System.Drawing.Point(933, 180);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(196, 34);
+            this.textBox_email.TabIndex = 11;
             // 
-            // pictureBox_login
+            // label5
             // 
-            this.pictureBox_login.Location = new System.Drawing.Point(852, 355);
-            this.pictureBox_login.Name = "pictureBox_login";
-            this.pictureBox_login.Size = new System.Drawing.Size(277, 153);
-            this.pictureBox_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_login.TabIndex = 15;
-            this.pictureBox_login.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(847, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 29);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Email:";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(847, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(282, 44);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Intra in aplicatie:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_Inainte
+            // 
+            this.button_Inainte.Location = new System.Drawing.Point(651, 468);
+            this.button_Inainte.Name = "button_Inainte";
+            this.button_Inainte.Size = new System.Drawing.Size(128, 40);
+            this.button_Inainte.TabIndex = 8;
+            this.button_Inainte.Text = "Inainte";
+            this.button_Inainte.UseVisualStyleBackColor = true;
+            this.button_Inainte.Click += new System.EventHandler(this.button_Inainte_Click);
+            // 
+            // button_Auto_Manual
+            // 
+            this.button_Auto_Manual.Location = new System.Drawing.Point(507, 468);
+            this.button_Auto_Manual.Name = "button_Auto_Manual";
+            this.button_Auto_Manual.Size = new System.Drawing.Size(138, 40);
+            this.button_Auto_Manual.TabIndex = 7;
+            this.button_Auto_Manual.Text = "Auto";
+            this.button_Auto_Manual.UseVisualStyleBackColor = true;
+            this.button_Auto_Manual.Click += new System.EventHandler(this.button_Auto_Manual_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(373, 439);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(406, 23);
+            this.progressBar1.TabIndex = 6;
+            // 
+            // button_Inapoi
+            // 
+            this.button_Inapoi.Location = new System.Drawing.Point(373, 468);
+            this.button_Inapoi.Name = "button_Inapoi";
+            this.button_Inapoi.Size = new System.Drawing.Size(128, 40);
+            this.button_Inapoi.TabIndex = 5;
+            this.button_Inapoi.Text = "Inapoi";
+            this.button_Inapoi.UseVisualStyleBackColor = true;
+            this.button_Inapoi.Click += new System.EventHandler(this.button_Inapoi_Click);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(373, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(406, 44);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Slide Show";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox_slideshow
+            // 
+            this.pictureBox_slideshow.Location = new System.Drawing.Point(373, 146);
+            this.pictureBox_slideshow.Name = "pictureBox_slideshow";
+            this.pictureBox_slideshow.Size = new System.Drawing.Size(406, 287);
+            this.pictureBox_slideshow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_slideshow.TabIndex = 3;
+            this.pictureBox_slideshow.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(17, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 49);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Despre Aplicatie:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(17, 151);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(236, 357);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Aceasta platforma eLearnig este dedicata Marii Uniri de la 1918.  La 1 decembrie " +
+    "2018 se implinesc 100 de ani de la Unirea Transilvaniei, Banatului, Crisanei si " +
+    "Maramuresului cu Romania";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1117, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Platforma eLearning dedicata Marii Uniri de la 1918";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -239,8 +240,8 @@
             this.Load += new System.EventHandler(this.eLearning1918_start_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_slideshow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_slideshow)).EndInit();
             this.ResumeLayout(false);
 
         }

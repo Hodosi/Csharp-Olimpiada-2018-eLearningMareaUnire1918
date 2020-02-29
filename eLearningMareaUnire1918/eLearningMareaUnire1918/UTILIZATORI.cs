@@ -34,5 +34,22 @@ namespace eLearningMareaUnire1918
                 return false;
             }
         }
+        public int userid(string email, string pass)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT IdUtilizator FROM Utilizatori WHERE EmailUtilizator=@em AND ParolaUtilizator=@pass";
+            command.Connection = conn.getConnection();
+
+            command.Parameters.Add("em", SqlDbType.VarChar).Value = email;
+            command.Parameters.Add("pass", SqlDbType.VarChar).Value = pass;
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return int.Parse(table.Rows[0][0].ToString());
+
+        }
     }
 }

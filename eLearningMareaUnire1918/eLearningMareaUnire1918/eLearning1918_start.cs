@@ -39,6 +39,7 @@ namespace eLearningMareaUnire1918
 
             if (util.userExists(email, parola))
             {
+                GLOBAL.idGLOBAL = util.userid(email, parola);
                 this.Hide();
                 eLearning1918_Elev frm = new eLearning1918_Elev();
                 frm.ShowDialog();
@@ -251,6 +252,11 @@ namespace eLearningMareaUnire1918
                 command.ExecuteNonQuery();
                 conn.closeConnection();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -57,6 +57,9 @@
     <Compile Include="eLearning1918_start.Designer.cs">
       <DependentUpon>eLearning1918_start.cs</DependentUpon>
     </Compile>
+    <Compile Include="EVALUARI.cs" />
+    <Compile Include="GLOBAL.cs" />
+    <Compile Include="ITEMI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QUERYS.cs" />
