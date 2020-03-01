@@ -21,6 +21,7 @@ namespace eLearningMareaUnire1918
         ITEMI item = new ITEMI();
         DataTable[] table = new DataTable[10];
         Random rand = new Random();
+        EVALUARI eval = new EVALUARI();
         int[] valoriValide = new int[100];
         int[] tipIntrebare = new int[5];
         int sIntrebari, nrOrd;
@@ -137,7 +138,7 @@ namespace eLearningMareaUnire1918
                 DateTime dateTest = DateTime.Now;
                 int nota = int.Parse(this.label_pct.Text);
                 int userid = GLOBAL.idGLOBAL;
-                EVALUARI eval = new EVALUARI();
+              //  EVALUARI eval = new EVALUARI();
                 eval.insertEvaluare(userid, nota, dateTest);
                 return;
             }
@@ -294,6 +295,7 @@ namespace eLearningMareaUnire1918
         private void carnetDeNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tabControl1.SelectedTab = tabPage_Carnet;
+            made_carnet();
         }
 
         private void testeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -344,10 +346,74 @@ namespace eLearningMareaUnire1918
         {
             Graphics graphics;
             graphics = panel_Grafic.CreateGraphics();
-            Pen pen=new Pen(Color.Black);
+            Pen pen = new Pen(Color.Black);
             pen.Width = 2;
+            Pen penMedie = new Pen(Color.BlueViolet);
+            penMedie.Width = 4;
+            Pen penGraf = new Pen(Color.Red);
+            penGraf.Width = 6;
             int panelSizeX = this.panel_Grafic.ClientSize.Width;
             int panelSizeY = this.panel_Grafic.ClientSize.Height;
+            float unitateX = (float)panelSizeX / 10;
+            float unitateY = (float)panelSizeY / 10;
+            // Point[] note = new Point[11];
+            for (int i = 1; i <= 10; i++)
+            {
+                //   note[i].X = unitateX;
+                // note[i].Y = unitateY * (i - 1);
+                for (int j = 1; j <= 10; j++)
+                {
+                    graphics.DrawLine(pen, unitateX * (j - 1), unitateY * (i - 1), unitateX * j, unitateY * (i - 1));
+                    graphics.DrawLine(pen, unitateX * j, unitateY * (i - 1), unitateX * j, unitateY * i);
+                }
+            }
+
+            DataTable tableNote = new DataTable();
+            tableNote = eval.getEvaluareById(GLOBAL.idGLOBAL);
+            int nNote = tableNote.Rows.Count;
+            int sNote = 0;
+            for (int i = 0; i < nNote; i++)
+            {
+                sNote += int.Parse(tableNote.Rows[i][0].ToString());
+            }
+            float pctmedia = (10 - sNote / nNote) * unitateY;
+            graphics.DrawLine(penMedie, 0, pctmedia, this.panel_Grafic.ClientSize.Width, pctmedia);
+            //MessageBox.Show(pctmedia.ToString());
+            for (int i = 1; i < nNote; i++)
+            {
+                int nota1 = int.Parse(tableNote.Rows[i - 1][0].ToString());
+                int nota2 = int.Parse(tableNote.Rows[i][0].ToString());
+                graphics.DrawLine(penGraf, i * unitateX, (10 - nota1) * unitateY, (i + 1) * unitateX, (10 - nota2) * unitateY);
+            }
+        }
+
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            this.printPreviewDialog1.Document = printDocument1;
+            //Get the document
+            if (DialogResult.OK == this.printPreviewDialog1.ShowDialog())
+            {
+                printDocument1.DocumentName = "Test Page Print";
+                printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            this.dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void iesireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void made_carnet()
+        {
+            this.label_carnetNote.Text = "Carnet de note al elevului " + eval.getEvaluareNume(GLOBAL.idGLOBAL);
+            this.dataGridView1.DataSource = eval.getEvaluareDataNoteById(GLOBAL.idGLOBAL);
         }
     }  
 }

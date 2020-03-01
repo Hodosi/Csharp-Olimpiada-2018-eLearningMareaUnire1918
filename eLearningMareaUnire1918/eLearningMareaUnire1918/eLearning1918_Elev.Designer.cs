@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eLearning1918_Elev));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Teste = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label_tip = new System.Windows.Forms.Label();
             this.label_pct = new System.Windows.Forms.Label();
             this.panel_tip4 = new System.Windows.Forms.Panel();
@@ -57,14 +59,18 @@
             this.button_Start = new System.Windows.Forms.Button();
             this.tabPage_Carnet = new System.Windows.Forms.TabPage();
             this.tabPage_Grafic = new System.Windows.Forms.TabPage();
+            this.panel_Grafic = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.elevToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carnetDeNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graficNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iesireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panel_Grafic = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_print = new System.Windows.Forms.Button();
+            this.label_carnetNote = new System.Windows.Forms.Label();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_Teste.SuspendLayout();
@@ -72,8 +78,10 @@
             this.panel_tip3.SuspendLayout();
             this.panel_tip2.SuspendLayout();
             this.panel_tip1.SuspendLayout();
+            this.tabPage_Carnet.SuspendLayout();
             this.tabPage_Grafic.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,6 +130,15 @@
             this.tabPage_Teste.TabIndex = 0;
             this.tabPage_Teste.Text = "Teste";
             this.tabPage_Teste.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(702, 314);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(295, 117);
+            this.richTextBox1.TabIndex = 12;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
             // 
             // label_tip
             // 
@@ -366,6 +383,9 @@
             // 
             // tabPage_Carnet
             // 
+            this.tabPage_Carnet.Controls.Add(this.label_carnetNote);
+            this.tabPage_Carnet.Controls.Add(this.button_print);
+            this.tabPage_Carnet.Controls.Add(this.dataGridView1);
             this.tabPage_Carnet.Location = new System.Drawing.Point(4, 38);
             this.tabPage_Carnet.Name = "tabPage_Carnet";
             this.tabPage_Carnet.Padding = new System.Windows.Forms.Padding(3);
@@ -383,6 +403,14 @@
             this.tabPage_Grafic.TabIndex = 2;
             this.tabPage_Grafic.Text = "Grafic note";
             this.tabPage_Grafic.UseVisualStyleBackColor = true;
+            // 
+            // panel_Grafic
+            // 
+            this.panel_Grafic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Grafic.Location = new System.Drawing.Point(0, 0);
+            this.panel_Grafic.Name = "panel_Grafic";
+            this.panel_Grafic.Size = new System.Drawing.Size(1054, 447);
+            this.panel_Grafic.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -433,23 +461,51 @@
             this.iesireToolStripMenuItem.Name = "iesireToolStripMenuItem";
             this.iesireToolStripMenuItem.Size = new System.Drawing.Size(71, 32);
             this.iesireToolStripMenuItem.Text = "Iesire";
+            this.iesireToolStripMenuItem.Click += new System.EventHandler(this.iesireToolStripMenuItem_Click);
             // 
-            // richTextBox1
+            // dataGridView1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(702, 314);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(295, 117);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(171, 104);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(699, 233);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // panel_Grafic
+            // button_print
             // 
-            this.panel_Grafic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Grafic.Location = new System.Drawing.Point(0, 0);
-            this.panel_Grafic.Name = "panel_Grafic";
-            this.panel_Grafic.Size = new System.Drawing.Size(1054, 447);
-            this.panel_Grafic.TabIndex = 0;
+            this.button_print.Location = new System.Drawing.Point(912, 283);
+            this.button_print.Name = "button_print";
+            this.button_print.Size = new System.Drawing.Size(100, 37);
+            this.button_print.TabIndex = 1;
+            this.button_print.Text = "Print";
+            this.button_print.UseVisualStyleBackColor = true;
+            this.button_print.Click += new System.EventHandler(this.button_print_Click);
+            // 
+            // label_carnetNote
+            // 
+            this.label_carnetNote.AutoSize = true;
+            this.label_carnetNote.Location = new System.Drawing.Point(412, 54);
+            this.label_carnetNote.Name = "label_carnetNote";
+            this.label_carnetNote.Size = new System.Drawing.Size(79, 29);
+            this.label_carnetNote.TabIndex = 2;
+            this.label_carnetNote.Text = "label2";
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // eLearning1918_Elev
             // 
@@ -474,9 +530,12 @@
             this.panel_tip2.PerformLayout();
             this.panel_tip1.ResumeLayout(false);
             this.panel_tip1.PerformLayout();
+            this.tabPage_Carnet.ResumeLayout(false);
+            this.tabPage_Carnet.PerformLayout();
             this.tabPage_Grafic.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,5 +579,10 @@
         private System.Windows.Forms.Label label_tip;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Panel panel_Grafic;
+        private System.Windows.Forms.Label label_carnetNote;
+        private System.Windows.Forms.Button button_print;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
